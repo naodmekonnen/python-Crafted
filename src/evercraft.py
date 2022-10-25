@@ -1,2 +1,6 @@
-def another_sum(a,b):
-    return a + b
+class Character:
+    def __init__(self, name, alignment, ac, hitpoints):
+        self.name = name
+        self.alignment = alignment
+        self.ac = ac
+        self.hitpoints = 'yo'
