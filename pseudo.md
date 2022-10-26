@@ -1,3 +1,5 @@
+Pseudocode: First Iteration
+
 need class named Character
 --within class we need several attributes
 --main attributes to include

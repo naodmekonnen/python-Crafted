@@ -48,6 +48,43 @@ def test_ability_scores():
     assert character1.intelligence is not None
     assert character1.charisma is not None
 
-def test_modifier():
-    character1 = Character('Roger', 'good', 10, 12, 0)
-    assert character1.modifier(3)
+def test_passed_scores():
+    character1 = Character('roger', 'good', 10, 12, 0, 10, 10, 10, 10, 10, 10)
+    assert character1.strength == 10
+    assert character1.dexterity == 10
+    assert character1.constitution == 10
+    assert character1.wisdom == 10
+    assert character1.intelligence == 10
+    assert character1.charisma == 10
+
+def test_attack():
+    character1 = Character('roger', 'good', 10, 0, 10, 10, 10, 10, 10, 10)
+    character2 = Character('roger', 'good', 10, 0, 10, 10, 10, 10, 10, 10)
+    character1.can_attack(15, character2)
+    assert character2.hitpoints == 4
+
+def test_attack_2():
+    character1 = Character('roger', 'good', 10, 0, 10, 10, 10, 10, 10, 10)
+    character2 = Character('roger', 'good', 10, 0, 10, 10, 10, 10, 10, 10)
+    character1.can_attack(20, character2)
+    assert character2.hitpoints == 3
+
+def test_can_take_damage():
+    character1 = Character('roger', 'good', 10, 0, 10, 10, 10, 10, 10, 10)
+    character2 = Character('roger', 'good', 10, 0, 10, 10, 10, 10, 10, 10)
+    character1.take_damage(15, character2)
+    assert character1.hitpoints == 4
+
+def test_can_take_damage1():
+    character1 = Character('roger', 'good', 10, 0, 10, 10, 10, 10, 10, 10)
+    assert character1.is_alive == True
+
+def test_can_take_damage2():
+    character1 = Character('roger', 'good', 10, 0, 10, 10, 10, 10, 10, 10)
+    character2 = Character('roger', 'good', 10, 0, 10, 10, 10, 10, 10, 10)
+    character1.take_damage(15, character2)
+    character1.take_damage(15, character2)
+    character1.take_damage(15, character2)
+    character1.take_damage(15, character2)
+    character1.take_damage(15, character2)
+    assert character1.is_alive == False
