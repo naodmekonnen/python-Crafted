@@ -88,3 +88,38 @@ def test_can_take_damage2():
     character1.take_damage(15, character2)
     character1.take_damage(15, character2)
     assert character1.is_alive == False
+
+def test_modifier():
+    character1 = Character('roger', 'good', 10, 0, 12, 10, 10, 10, 10, 10, 12)
+    character1.modifier()
+    assert character1.attack == 2
+
+def test_modifier_dice():
+    character1 = Character('roger', 'good', 10, 0, 12, 10, 10, 10, 10, 10, 12)
+    character1.modifier()
+    assert character1.dice_roll == 13
+    
+def test_modifier2():
+    character1 = Character('roger', 'good', 10, 0, 15, 10, 10, 10, 10, 10, 12)
+    character1.modifier()
+    assert character1.dice_roll == 14
+    assert character1.attack == 3
+
+def test_modifier3():
+    character1 = Character('roger', 'good', 10, 0, 20, 10, 10, 10, 10, 10, 10)
+    character1.modifier()
+    assert character1.attack == 6
+    assert character1.dice_roll == 15
+
+def test_modifier4():
+    character1 = Character('roger', 'good', 10, 0, 2, 10, 10, 10, 10, 10, 10)
+    character1.modifier()
+    assert character1.attack == 1
+    assert character1.dice_roll == 6
+
+
+
+
+    
+    
+
