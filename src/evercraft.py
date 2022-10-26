@@ -14,6 +14,7 @@ class Character:
         self.attack = 1
         self.is_alive = True
         self.dice_roll = dice_roll
+        self.level = 1
 
     def modifier(self):
 
@@ -101,15 +102,6 @@ class Character:
                 self.hitpoints += 5
 
 
-
-
-        
-    
-    
-    
-    
-    
-    
     def can_attack(self, enemy):
         if self.dice_roll == 20:
             self.attack += 1
@@ -124,5 +116,12 @@ class Character:
             self.hitpoints -= self.attack
         if self.hitpoints == 0:
             self.is_alive = False
+    
+    def check_level(self):
+        if self.expoints >= 1000:
+                self.level += 1
+                self.hitpoints +=5
+                self.dice_roll +=1
+
     
     

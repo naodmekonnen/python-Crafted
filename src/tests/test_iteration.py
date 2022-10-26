@@ -136,7 +136,20 @@ def test_expoints():
     character1 = Character('roger', 'good', 10, 0, 10, 12, 12, 10, 10, 10, 10)
     character2 = Character('roger', 'good', 10, 0, 10, 12, 12, 10, 10, 10, 10)
     character1.modifier()
+    character1.can_attack(character2)
+    assert character2.hitpoints == 4
+    assert character1.expoints == 10
     
+def test_check_level():
+    character1 = Character('roger', 'good', 10, 0, 10, 12, 12, 10, 10, 10, 10)
+    character2 = Character('roger', 'good', 10, 0, 10, 12, 12, 10, 10, 10, 10)
+    assert character1.level == 1
+   
+def test_check_level_up():
+    character1 = character1 = Character('roger', 'good', 10, 1000, 10, 12, 12, 10, 10, 10, 10)
+    character1 = modifier()
+    assert character1.level == 2
+    assert character1.hitpoints == 10
     
 
 
