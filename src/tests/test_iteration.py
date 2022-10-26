@@ -117,9 +117,19 @@ def test_modifier4():
     assert character1.attack == 1
     assert character1.dice_roll == 6
 
+def test_dex():
+    character1 = Character('roger', 'good', 10, 0, 10, 1, 10, 10, 10, 10, 10)
+    character1.modifier()
+    assert character1.arclass == 5
 
+def test_dex_complete():
+    character1 = Character('roger', 'good', 10, 0, 10, 12, 10, 10, 10, 10, 10)
+    character1.modifier()
+    assert character1.arclass == 11
 
+def test_constitution():
+    character1 = Character('roger', 'good', 10, 0, 10, 12, 12, 10, 10, 10, 10)
+    character1.modifier()
+    assert character1.hitpoints == 6
 
-    
-    
 

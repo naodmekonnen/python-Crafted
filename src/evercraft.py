@@ -48,13 +48,61 @@ class Character:
                 self.attack += 4
                 self.dice_roll += 4
         elif self.strength == 20:
-                self.attack += 5
-                self.dice_roll += 5
+                self.attack += 5 * 2
+                self.dice_roll += 5 * 2
         
         if self.attack < 1:
             self.attack = 1
-    
-    
+        if   self.dexterity == 1:
+                self.arclass -=5
+        elif self.dexterity == 2 or self.dexterity == 3:
+                self.arclass -=4
+        elif self.dexterity == 4 or self.dexterity == 5:
+                self.arclass -= 3
+        elif self.dexterity == 6 or self.dexterity == 7:
+                self.arclass -=2
+        elif self.dexterity == 8 or self.dexterity == 9:
+                self.arclass -= 1
+        elif self.dexterity == 10 or self.dexterity == 11:
+                self.arclass
+        elif self.dexterity == 12 or self.dexterity == 13:
+                self.arclass +=1
+        elif self.dexterity == 14 or self.dexterity == 15:
+                self.arclass += 2
+        elif self.dexterity == 16 or self.dexterity == 17:
+                self.arclass += 3
+        elif self.dexterity == 18 or self.dexterity == 19:
+                self.arclass += 4
+        elif self.dexterity == 20:
+                self.arclass += 5
+
+        if   self.constitution == 1:
+                self.hitpoints -=5
+        elif self.constitution == 2 or self.constitution == 3:
+                self.hitpoints -=4
+        elif self.constitution == 4 or self.constitution == 5:
+                self.hitpoints -= 3
+        elif self.constitution == 6 or self.constitution == 7:
+                self.hitpoints -=2
+        elif self.constitution == 8 or self.constitution == 9:
+                self.hitpoints -= 1
+        elif self.constitution == 10 or self.constitution == 11:
+                self.hitpoints
+        elif self.constitution == 12 or self.constitution == 13:
+                self.hitpoints +=1
+        elif self.constitution == 14 or self.constitution == 15:
+                self.hitpoints += 2
+        elif self.constitution == 16 or self.constitution == 17:
+                self.hitpoints += 3
+        elif self.constitution == 18 or self.constitution == 19:
+                self.hitpoints += 4
+        elif self.constitution == 20:
+                self.hitpoints += 5
+
+
+
+
+        
     
     
     
