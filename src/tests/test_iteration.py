@@ -132,4 +132,13 @@ def test_constitution():
     character1.modifier()
     assert character1.hitpoints == 6
 
+def test_expoints():
+    character1 = Character('roger', 'good', 10, 0, 10, 12, 12, 10, 10, 10, 10)
+    character2 = Character('roger', 'good', 10, 0, 10, 12, 12, 10, 10, 10, 10)
+    character1.modifier()
+    
+    
+
+
+
 

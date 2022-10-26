@@ -53,6 +53,7 @@ class Character:
         
         if self.attack < 1:
             self.attack = 1
+
         if   self.dexterity == 1:
                 self.arclass -=5
         elif self.dexterity == 2 or self.dexterity == 3:
@@ -114,6 +115,7 @@ class Character:
             self.attack += 1
         if self.dice_roll >= enemy.arclass:
             enemy.hitpoints -= self.attack
+            self.expoints += 10
 
     def take_damage(self, enemy):
         if self.dice_roll == 20:
