@@ -157,8 +157,8 @@ def test_new_modifier():
     assert character1.dice_roll == 12
 
 def test_new_modifier2():
-    character1 = Character('roger', 'good', 10, 0, 15, 12, 12, 10, 10, 10, 10)
-    
+    character1 = Character('roger', 'good', 10, 0, 15, 12, 12, 10, 10, 10, 12)
+    assert character1.hitpoints == 6
 
 
 

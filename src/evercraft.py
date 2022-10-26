@@ -19,7 +19,43 @@ class Character:
     def modifier(self, ability):
         return (getattr(self, ability) - 10)//2
 
-        # if   self.strength == 1:
+    def make_attack(self, enemy):
+        if self.attack < 1:
+            self.attack = 1
+        if self.dice_roll == 20:
+            self.attack += 1
+        if self.dice_roll >= enemy.arclass:
+            enemy.hitpoints -= self.attack
+            self.expoints += 10
+
+    def take_damage(self, enemy):
+        if self.dice_roll == 20:
+            self.attack *= 2
+        if self.dice_roll >= self.arclass:
+            self.hitpoints -= self.attack
+        if self.hitpoints == 0:
+            self.is_alive = False
+    
+    def level_up(self):
+        if self.expoints >= 1000:
+                self.level += 1
+                self.hitpoints +=5
+                self.dice_roll +=1
+
+class Fighter(self, Character):
+    self.hitpoints = 10 + self.modifier('constitution')
+    
+
+
+
+
+
+
+
+
+
+
+    # if   self.strength == 1:
         #         self.attack -=5
         #         self.dice_roll -= 5
         # elif self.strength == 2 or self.strength == 3:
@@ -101,30 +137,4 @@ class Character:
         #         self.hitpoints += 4
         # elif self.constitution == 20:
         #         self.hitpoints += 5
-
-
-    def can_attack(self, enemy):
-        if self.attack < 1:
-            self.attack = 1
-        if self.dice_roll == 20:
-            self.attack += 1
-        if self.dice_roll >= enemy.arclass:
-            enemy.hitpoints -= self.attack
-            self.expoints += 10
-
-    def take_damage(self, enemy):
-        if self.dice_roll == 20:
-            self.attack *= 2
-        if self.dice_roll >= self.arclass:
-            self.hitpoints -= self.attack
-        if self.hitpoints == 0:
-            self.is_alive = False
-    
-    def check_level(self):
-        if self.expoints >= 1000:
-                self.level += 1
-                self.hitpoints +=5
-                self.dice_roll +=1
-
-    
     
