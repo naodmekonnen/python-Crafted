@@ -15,26 +15,37 @@ need class named Character
         self.attack = 1
 ---else      
 ----if self.strength == 1
+-----dice_roll -=5
 -----self.attack -= 5
 ----elif self.strength ==2 or ==3
+-----dice_roll -=4
 -----self.attack -= 4 
 ----elif self.strength ==4 or ==5
+-----dice_roll -=3
 -----self.attack -= 3 
 ----elif self.strength ==6 or ==7
+-----dice_roll -=2
 -----self.attack -= 2 
 ----elif self.strength ==8 or ==9
+-----dice_roll -=1
 -----self.attack -= 1
 ----elif self.strength == 10 or ==11
+-----dice_roll
 -----self.attack
 ----if self.strength ==12 or ==13
+-----dice_roll +=1
 -----self.attack += 1
     elif self.strength ==14 or ==15
+-----dice_roll +=2
 -----self.attack += 2
     elif self.strength ==16 or ==17
+-----dice_roll +=3
 -----self.attack += 3
     elif self.strength ==18 or ==19
+-----dice_roll +=4
 -----self.attack += 4
     elif self.strength == 20
+-----dice_roll +=5
 -----self.attack += 5
 
 ----SAME FOR CONSTITUTION
