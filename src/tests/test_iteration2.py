@@ -60,6 +60,10 @@ def test_monk_attack():
     monk1 = Monk('roger', 'good', 10, 1000, 15, 12, 12, 10, 10, 10, 12)
     assert monk1.attack == 5
 
+def test_monk_AC():
+    monk1 = Monk('roger', 'good', 10, 1000, 15, 12, 12, 10, 10, 10, 12)
+    assert monk1.arclass == 
+
 
 
 
