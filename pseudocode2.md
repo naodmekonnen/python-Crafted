@@ -13,10 +13,11 @@ LOOK AT ITERATION 2
     --- attack: if roll = 20, then 3 * attack(CRITICAL HIT)*
     --- add dexterity modifier to attack instead of strength
     --- if alignment = good, change to bad or neutral 
-    --- if dexterity is positive ignore dex-modifier armor_class - dexterity(REVISIT) 
+    --- if dexterity is positive ignore dex-modifier armor_class - dexterity(REVISIT LATER) 
 
 --- create Monk class
     --- add 1 hitpoint to base
+    --- 3 points of damage instead of 1
     ----adjust the level_up function to add 6 hitpoints
     --- add wisdom and dex modifier (if positive) to AC 
     --- increase attack roll by 1

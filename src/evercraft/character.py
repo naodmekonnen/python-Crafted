@@ -1,9 +1,10 @@
+import random
+
 class Character:
     level_addition = 5
     dice_roll_addition = 1
     attack_modifier = 1
     crit_modifier = 2
-    
     def __init__(self, name, alignment, arclass, expoints, strength, dexterity, constitution, wisdom, intelligence, charisma, dice_roll):
         self.name = name
         self.alignment = alignment
@@ -57,10 +58,22 @@ class Fighter(Character):
     
 class Rogue(Character):
     crit_modifier = 3
+    alignment_list = ["neutral", "evil"]
     def __init__(self, name, alignment, arclass, expoints, strength, dexterity, constitution, wisdom, intelligence, charisma, dice_roll):
         super().__init__(name, alignment, arclass, expoints, strength, dexterity, constitution, wisdom, intelligence, charisma, dice_roll)
+        self.attack = 1 + self.modifier('dexterity')
+        self.alignment = random.choice(self.alignment_list)
+
+class Monk(Character):
+    level_addition = 6
+    def __init__(self, name, alignment, arclass, expoints, strength, dexterity, constitution, wisdom, intelligence, charisma, dice_roll):
+        super().__init__(name, alignment, arclass, expoints, strength, dexterity, constitution, wisdom, intelligence, charisma, dice_roll)
+        self.hitpoints = 6 + self.modifier('constitution')
+        self.attack = 3 + self.modifier('strength')
+        
 
 
+    
 
 
 

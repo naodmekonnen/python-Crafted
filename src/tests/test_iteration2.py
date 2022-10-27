@@ -41,7 +41,24 @@ def test_rogue_attack():
     assert rogue2.hitpoints == -3
 
 def test_rogue_dex():
-    
+    rogue1 = Rogue('roger', 'good', 10, 0, 15, 12, 12, 10, 10, 10, 15)
+    assert rogue1.attack == 2
+
+def test_rogue_alignment():
+    rogue1 = Rogue('roger', 'good', 10, 0, 15, 12, 12, 10, 10, 10, 15)
+    assert rogue1.alignment == 'evil' or rogue1.alignment == 'neutral'
+
+def test_monk_class():
+    assert Monk
+
+def test_hitpoints10():
+    monk1 = Monk('roger', 'good', 10, 1000, 15, 12, 12, 10, 10, 10, 12)
+    monk1.level_up()
+    assert monk1.hitpoints == 12
+
+def test_monk_attack():
+    monk1 = Monk('roger', 'good', 10, 1000, 15, 12, 12, 10, 10, 10, 12)
+    assert monk1.attack == 5
 
 
 
