@@ -2,7 +2,7 @@ class Character:
     level_addition = 5
     dice_roll_addition = 1
     attack_modifier = 1
-    # crit_modifier
+    crit_modifier = 2
     
     def __init__(self, name, alignment, arclass, expoints, strength, dexterity, constitution, wisdom, intelligence, charisma, dice_roll):
         self.name = name
@@ -28,14 +28,14 @@ class Character:
         if self.attack < 1:
             self.attack = 1
         if self.dice_roll >= 20:
-            self.attack += 1
+            self.attack *= self.crit_modifier
         if self.dice_roll >= enemy.arclass:
             enemy.hitpoints -= self.attack
             self.expoints += 10
 
     def take_damage(self, enemy):
         if self.dice_roll == 20:
-            self.attack *= 2
+            self.attack *= crit_modifier
         if self.dice_roll >= self.arclass:
             self.hitpoints -= self.attack
         if self.hitpoints == 0:

@@ -28,6 +28,12 @@ def test_AC_fighter():
 def test_class_rogue():
     assert Rogue
 
+def test_new_crit_modifier():
+    fighter1 = Fighter('roger', 'good', 10, 1000, 15, 12, 12, 10, 10, 10, 20)
+    fighter2 = Fighter('roger', 'good', 10, 1000, 15, 12, 12, 10, 10, 10, 20)
+    fighter1.make_attack(fighter2)
+    assert fighter2.hitpoints == 5
+
 
 
 
