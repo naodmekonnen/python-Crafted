@@ -10,7 +10,7 @@ LOOK AT ITERATION 2
 
     
 --- create Rogue Class
-    --- attack: if roll = 20, then 3 * attack(CRITICAL HIT)
+    --- attack: if roll = 20, then 3 * attack(CRITICAL HIT)*
     --- add dexterity modifier to attack instead of strength
     --- if alignment = good, change to bad or neutral 
     --- if dexterity is positive ignore dex-modifier armor_class - dexterity(REVISIT) 

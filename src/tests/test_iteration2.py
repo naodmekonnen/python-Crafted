@@ -34,6 +34,15 @@ def test_new_crit_modifier():
     fighter1.make_attack(fighter2)
     assert fighter2.hitpoints == 5
 
+def test_rogue_attack():
+    rogue1 = Rogue('roger', 'good', 10, 1000, 15, 12, 12, 10, 10, 10, 20)
+    rogue2 = Rogue('roger', 'good', 10, 1000, 15, 12, 12, 10, 10, 10, 20)
+    rogue1.make_attack(rogue2)
+    assert rogue2.hitpoints == -3
+
+def test_rogue_dex():
+    
+
 
 
 

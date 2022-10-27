@@ -56,8 +56,9 @@ class Fighter(Character):
 
     
 class Rogue(Character):
-    pass
-
+    crit_modifier = 3
+    def __init__(self, name, alignment, arclass, expoints, strength, dexterity, constitution, wisdom, intelligence, charisma, dice_roll):
+        super().__init__(name, alignment, arclass, expoints, strength, dexterity, constitution, wisdom, intelligence, charisma, dice_roll)
 
 
 
