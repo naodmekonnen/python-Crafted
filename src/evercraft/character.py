@@ -5,6 +5,7 @@ class Character:
     dice_roll_addition = 1
     attack_modifier = 1
     crit_modifier = 2
+    attack_roll_modifier = 0
     def __init__(self, name, alignment, arclass, expoints, strength, dexterity, constitution, wisdom, intelligence, charisma, dice_roll):
         self.name = name
         self.alignment = alignment
@@ -17,7 +18,7 @@ class Character:
         self.charisma = charisma
         self.attack = 1 + self.modifier('strength')
         self.is_alive = True
-        self.dice_roll = dice_roll + self.modifier('strength')
+        self.dice_roll = dice_roll + self.modifier('strength') + self.attack_roll_modifier
         self.level = 1
         self.hitpoints = 5 + self.modifier('constitution')
         self.arclass = arclass + self.modifier('dexterity')
@@ -78,11 +79,27 @@ class Monk(Character):
         
 class Paladin(Character):
     level_addition = 8
+    attack_roll_modifier = 2
     def __init__(self, name, alignment, arclass, expoints, strength, dexterity, constitution, wisdom, intelligence, charisma, dice_roll):
         super().__init__(name, alignment, arclass, expoints, strength, dexterity, constitution, wisdom, intelligence, charisma, dice_roll)
         self.hitpoints = 8 + self.modifier('constitution')
-        
 
+    def make_attack(self, enemy):
+        if self.attack < 1:
+            self.attack = 1
+        if enemy.alignment == 'evil':
+            if self.dice_roll + self.attack_roll_modifier >= 20:
+                self.attack *= self.crit_modifier
+            if self.dice_roll + self.attack_roll_modifier >= enemy.arclass:
+                enemy.hitpoints -= self.attack + self.attack_roll_modifier
+                self.expoints += 10
+        else: 
+            if self.dice_roll >= 20:
+                self.attack *= self.crit_modifier
+            if self.dice_roll >= enemy.arclass:
+                enemy.hitpoints -= self.attack
+                self.expoints += 10
+    
     
 
 
