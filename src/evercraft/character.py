@@ -44,7 +44,7 @@ class Character:
             self.dice_roll += 1
 
 class Fighter(Character):
-    
+    level_addition = 10
     def __init__(self, name, alignment, arclass, expoints, strength, dexterity, constitution, wisdom, intelligence, charisma, dice_roll):
         super().__init__(name, alignment, arclass, expoints, strength, dexterity, constitution, wisdom, intelligence, charisma, dice_roll)
         self.hitpoints = 10 + self.modifier('constitution')
