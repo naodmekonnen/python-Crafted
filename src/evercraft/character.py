@@ -49,7 +49,7 @@ class Fighter(Character):
         super().__init__(name, alignment, arclass, expoints, strength, dexterity, constitution, wisdom, intelligence, charisma, dice_roll)
         self.hitpoints = 10 + self.modifier('constitution')
 
-    # def fighter_level()
+    
 
 
 
