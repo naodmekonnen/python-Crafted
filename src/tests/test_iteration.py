@@ -1,7 +1,8 @@
-from evercraft import *
+from evercraft.character import *
 
 def test_class_character():
     assert Character
+
 
 def test_name_attribute():
     character1 = Character('Roger', 'evil', 10, 12, 'hi')

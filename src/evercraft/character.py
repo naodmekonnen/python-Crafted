@@ -4,10 +4,10 @@ class Character:
         self.alignment = alignment
         self.expoints = expoints
         self.strength = strength
-        self.dexterity = dexterity 
+        self.dexterity = dexterity
         self.constitution = constitution
         self.wisdom = wisdom
-        self.intelligence = intelligence 
+        self.intelligence = intelligence
         self.charisma = charisma
         self.attack = 1 + self.modifier('strength')
         self.is_alive = True
@@ -35,25 +35,16 @@ class Character:
             self.hitpoints -= self.attack
         if self.hitpoints == 0:
             self.is_alive = False
-    
+
     def level_up(self):
         if self.expoints >= 1000:
-                self.level += 1
-                self.hitpoints +=5
-                self.dice_roll +=1
+            self.level += 1
+            self.hitpoints += 5
+            self.dice_roll += 1
 
-class Fighter(self, Character):
-    self.hitpoints = 10 + self.modifier('constitution')
-    
-
-
-
-
-
-
-
-
-
+class Fighter(Character):
+    pass
+#     self.hitpoints = 10 + self.modifier('constitution')
 
     # if   self.strength == 1:
         #         self.attack -=5
@@ -62,7 +53,7 @@ class Fighter(self, Character):
         #         self.attack -=4
         #         self.dice_roll -= 4
         # elif self.strength == 4 or self.strength == 5:
-        #         self.attack -= 3 
+        #         self.attack -= 3
         #         self.dice_roll -= 3
         # elif self.strength == 6 or self.strength == 7:
         #         self.attack -=2
@@ -88,7 +79,7 @@ class Fighter(self, Character):
         # elif self.strength == 20:
         #         self.attack += 5 * 2
         #         self.dice_roll += 5 * 2
-        
+
         # if self.attack < 1:
         #     self.attack = 1
 
@@ -137,4 +128,3 @@ class Fighter(self, Character):
         #         self.hitpoints += 4
         # elif self.constitution == 20:
         #         self.hitpoints += 5
-    
