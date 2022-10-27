@@ -71,6 +71,11 @@ class Monk(Character):
         self.hitpoints = 6 + self.modifier('constitution')
         self.attack = 3 + self.modifier('strength')
         
+        if self.modifier('wisdom') < 0:
+            self.arclass = self.arclass
+        else: 
+            self.arclass = self.arclass + self.modifier('wisdom')
+        
 
 
     
