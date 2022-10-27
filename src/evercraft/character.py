@@ -82,14 +82,15 @@ class Paladin(Character):
     attack_roll_modifier = 2
     def __init__(self, name, alignment, arclass, expoints, strength, dexterity, constitution, wisdom, intelligence, charisma, dice_roll):
         super().__init__(name, alignment, arclass, expoints, strength, dexterity, constitution, wisdom, intelligence, charisma, dice_roll)
+        self.alignment = 'good'
         self.hitpoints = 8 + self.modifier('constitution')
-
+        
     def make_attack(self, enemy):
         if self.attack < 1:
             self.attack = 1
         if enemy.alignment == 'evil':
             if self.dice_roll + self.attack_roll_modifier >= 20:
-                self.attack *= self.crit_modifier
+                self.attack *= (self.crit_modifier + 1)
             if self.dice_roll + self.attack_roll_modifier >= enemy.arclass:
                 enemy.hitpoints -= self.attack + self.attack_roll_modifier
                 self.expoints += 10

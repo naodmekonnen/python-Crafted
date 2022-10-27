@@ -85,6 +85,14 @@ def test_dice_roll_modifier():
     fighter1 = Fighter('roger', 'evil', 10, 1000, 10, 12, 12, 10, 10, 10, 17)
     paladin1.make_attack(fighter1)
     assert fighter1.hitpoints == 8
+
+def test_paladin_crit():
+    paladin1 = Paladin('roger', 'good', 10, 1000, 10, 12, 12, 10, 10, 10, 18)
+    fighter1 = Fighter('roger', 'evil', 10, 1000, 10, 12, 12, 10, 10, 10, 17)
+    paladin1.make_attack(fighter1)
+    assert fighter1.hitpoints == 6
+
+
      
 
 

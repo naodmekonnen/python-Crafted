@@ -24,6 +24,8 @@ LOOK AT ITERATION 2
 --- create Paladin class
     --- add 3 hitpoints to base*
     ---- adjust level_up function to at 8 per level*
-    --- add +2 to dice_roll and attack if alignment = evil
+    --- add +2 to dice_roll and attack if alignment = evil*
     --- increases dice roll  by 1 for every level
     --- auto set align to good
+    --- does triple damage when critting on an Evil character 
+    (i.e. add the +2 bonus for a regular attack, and then triple that)*
