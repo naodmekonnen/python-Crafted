@@ -10,5 +10,8 @@ def test_new_class_name():
 def test_hitpoints1():
     fighter1 = Fighter('roger', 'good', 10, 0, 15, 12, 12, 10, 10, 10, 12)
     assert fighter1.hitpoints == 10
+
+
+
    
      
