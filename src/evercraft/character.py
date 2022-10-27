@@ -18,7 +18,7 @@ class Character:
         self.charisma = charisma
         self.attack = 1 + self.modifier('strength')
         self.is_alive = True
-        self.dice_roll = dice_roll + self.modifier('strength') + self.attack_roll_modifier
+        self.dice_roll = dice_roll + self.modifier('strength')
         self.level = 1
         self.hitpoints = 5 + self.modifier('constitution')
         self.arclass = arclass + self.modifier('dexterity')

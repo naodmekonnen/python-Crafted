@@ -81,8 +81,11 @@ def test_hitpoints_level():
     assert paladin1.hitpoints == 17
 
 def test_dice_roll_modifier():
-        paladin1 = Paladin('roger', 'good', 10, 1000, 15, 12, 12, 8, 10, 10, 12)
-        assert paladin1.dice_roll == 16
+    paladin1 = Paladin('roger', 'good', 10, 1000, 10, 12, 12, 10, 10, 10, 17)
+    fighter1 = Fighter('roger', 'evil', 10, 1000, 10, 12, 12, 10, 10, 10, 17)
+    paladin1.make_attack(fighter1)
+    assert fighter1.hitpoints == 8
+     
 
 
 
