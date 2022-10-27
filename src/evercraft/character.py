@@ -1,4 +1,5 @@
 class Character:
+    level_addition = 5
     def __init__(self, name, alignment, arclass, expoints, strength, dexterity, constitution, wisdom, intelligence, charisma, dice_roll):
         self.name = name
         self.alignment = alignment
@@ -39,11 +40,39 @@ class Character:
     def level_up(self):
         if self.expoints >= 1000:
             self.level += 1
-            self.hitpoints += 5
+            self.hitpoints += self.level_addition
             self.dice_roll += 1
 
 class Fighter(Character):
-    pass
+    
+    def __init__(self, name, alignment, arclass, expoints, strength, dexterity, constitution, wisdom, intelligence, charisma, dice_roll):
+        super().__init__(name, alignment, arclass, expoints, strength, dexterity, constitution, wisdom, intelligence, charisma, dice_roll)
+        self.hitpoints = 10 + self.modifier('constitution')
+
+    # def fighter_level()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #     self.hitpoints = 10 + self.modifier('constitution')
 
     # if   self.strength == 1:

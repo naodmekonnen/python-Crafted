@@ -162,5 +162,9 @@ def test_new_modifier2():
     assert character1.hitpoints == 6
 
 
-
+def test_check_level_up2():
+    character1 = character1 = Character('roger', 'good', 10, 1000, 10, 12, 12, 10, 10, 10, 10)
+    character1.level_up()
+    assert character1.level == 2
+    assert character1.hitpoints == 11
 
