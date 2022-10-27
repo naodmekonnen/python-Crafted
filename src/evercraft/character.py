@@ -17,6 +17,8 @@ class Character:
         self.intelligence = intelligence
         self.charisma = charisma
         self.attack = 1 + self.modifier('strength')
+        if self.attack < 1:
+            self.attack = 1
         self.is_alive = True
         self.dice_roll = dice_roll + self.modifier('strength')
         self.level = 1
@@ -27,8 +29,8 @@ class Character:
         return (getattr(self, ability) - 10)//2
 
     def make_attack(self, enemy):
-        if self.attack < 1:
-            self.attack = 1
+        # if self.attack < 1:
+        #     self.attack = 1
         if self.dice_roll >= 20:
             self.attack *= self.crit_modifier
         if self.dice_roll >= enemy.arclass:
@@ -86,8 +88,8 @@ class Paladin(Character):
         self.hitpoints = 8 + self.modifier('constitution')
         
     def make_attack(self, enemy):
-        if self.attack < 1:
-            self.attack = 1
+        # if self.attack < 1:
+        #     self.attack = 1
         if enemy.alignment == 'evil':
             if self.dice_roll + self.attack_roll_modifier >= 20:
                 self.attack *= (self.crit_modifier + 1)
