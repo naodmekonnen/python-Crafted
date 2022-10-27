@@ -1,5 +1,9 @@
 class Character:
     level_addition = 5
+    dice_roll_addition = 1
+    attack_modifier = 1
+    # crit_modifier
+    
     def __init__(self, name, alignment, arclass, expoints, strength, dexterity, constitution, wisdom, intelligence, charisma, dice_roll):
         self.name = name
         self.alignment = alignment
@@ -23,7 +27,7 @@ class Character:
     def make_attack(self, enemy):
         if self.attack < 1:
             self.attack = 1
-        if self.dice_roll == 20:
+        if self.dice_roll >= 20:
             self.attack += 1
         if self.dice_roll >= enemy.arclass:
             enemy.hitpoints -= self.attack
@@ -41,16 +45,18 @@ class Character:
         if self.expoints >= 1000:
             self.level += 1
             self.hitpoints += self.level_addition
-            self.dice_roll += 1
+            self.dice_roll += self.dice_roll_addition
 
 class Fighter(Character):
     level_addition = 10
     def __init__(self, name, alignment, arclass, expoints, strength, dexterity, constitution, wisdom, intelligence, charisma, dice_roll):
         super().__init__(name, alignment, arclass, expoints, strength, dexterity, constitution, wisdom, intelligence, charisma, dice_roll)
         self.hitpoints = 10 + self.modifier('constitution')
+        self.arclass += 2 + self.modifier('dexterity')
 
     
-
+class Rogue(Character):
+    pass
 
 
 
