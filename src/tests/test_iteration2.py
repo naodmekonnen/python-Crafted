@@ -68,6 +68,22 @@ def test_monk_AC_negatory():
     monk1 = Monk('roger', 'good', 10, 1000, 15, 12, 12, 8, 10, 10, 12)
     assert monk1.arclass == 11
 
+def test_Paladin():
+    assert Paladin
+
+def test_hitpoints1():
+    paladin1 = Paladin('roger', 'good', 10, 1000, 15, 12, 12, 8, 10, 10, 12)
+    assert paladin1.hitpoints == 9
+     
+def test_hitpoints_level():
+    paladin1 = Paladin('roger', 'good', 10, 1000, 15, 12, 12, 8, 10, 10, 12)
+    paladin1.level_up()
+    assert paladin1.hitpoints == 17
+
+def test_dice_roll_modifier():
+        paladin1 = Paladin('roger', 'good', 10, 1000, 15, 12, 12, 8, 10, 10, 12)
+        assert paladin1.dice_roll == 16
+
 
 
 

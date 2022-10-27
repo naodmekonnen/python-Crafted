@@ -76,7 +76,12 @@ class Monk(Character):
         else: 
             self.arclass = self.arclass + self.modifier('wisdom')
         
-
+class Paladin(Character):
+    level_addition = 8
+    def __init__(self, name, alignment, arclass, expoints, strength, dexterity, constitution, wisdom, intelligence, charisma, dice_roll):
+        super().__init__(name, alignment, arclass, expoints, strength, dexterity, constitution, wisdom, intelligence, charisma, dice_roll)
+        self.hitpoints = 8 + self.modifier('constitution')
+        
 
     
 
