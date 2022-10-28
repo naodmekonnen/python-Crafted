@@ -124,7 +124,7 @@ Pseudocode: First Iteration
 4. Conditional: if enemy alignment is evil,
         - if diceroll + modifier is greater or equal to 20(critical hit), add 2 to attack, then double
         - if diceroll + modifier is greater or equal to enemy armor class
-
+-  able to use attack roll modifier on both the roll itself and the attack itself as a bonus
      
 
 
