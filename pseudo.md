@@ -39,7 +39,7 @@ Pseudocode: First Iteration
 3. use the getattr() function (and // to return integers)to calculate the ability scores 
 4. END
 
-attack function: 
+## Attack function: 
 
 1. BEGIN
 2. pass in die roll (hardcoded)
@@ -50,7 +50,7 @@ attack function:
     7. else no hit occurs
 8. END
 
-- damage function
+## Damage function
  
 1. BEGIN
 2. dice roll (hardcoded) to determine success of attack or defense
