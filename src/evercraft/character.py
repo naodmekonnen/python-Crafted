@@ -58,10 +58,13 @@ class Character:
 
 # calculates levels gained based on experience points
     def level_up(self):
-        if self.expoints >= 1000:
-            self.level += 1
-            self.hitpoints += self.level_addition
-            self.dice_roll += self.dice_roll_addition
+        count = 1
+        while (count<20):
+            if self.expoints >= int(f"{count}000"):
+                self.level += 1
+                self.hitpoints += self.level_addition
+                self.dice_roll += self.dice_roll_addition
+            count += 1
 
 # New child class, inherits attributes and methods from parent(character) class
 class Fighter(Character):
@@ -132,7 +135,13 @@ class Paladin(Character):
 
 
 
-
+# count = 1
+        # while (count<20):
+        #     if self.expoints >= int(f"{count}000"):
+        #         self.level += 1
+        #         self.hitpoints += self.level_addition
+        #         self.dice_roll += self.dice_roll_addition
+        #     count + 1
 
 
 
