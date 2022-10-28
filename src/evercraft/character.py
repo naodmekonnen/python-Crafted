@@ -5,13 +5,17 @@ import random
 class Character:
     # class level attributes that we use to adjust dice rolls, abilities, attacks, crits, etc
     level_addition = 5
+    # used in level up 
     dice_roll_addition = 1
-    attack_modifier = 1
+    # used for critical hits(modifies damage)
     crit_modifier = 2
+    # used in paladin class
     attack_roll_modifier = 0
 
     # initializer that allows us to pass in necessary values during testing. called every time an object is created from a class
     # note---dice roll is an attack roll passed in (bad naming convention sorry!)
+    # should create more classes and use kwargs for refactoring
+    # could make them class level attributes and 
     def __init__(self, name, alignment, arclass, expoints, strength, dexterity, constitution, wisdom, intelligence, charisma, dice_roll):
         
         #values passed in from test, some passed in, some base values
@@ -37,7 +41,7 @@ class Character:
         self.hitpoints = 5 + self.modifier('constitution')
         self.arclass = arclass + self.modifier('dexterity')
 
-# modifier that adjusts abilities passed in (based on game rules)
+# modifier that adjusts abilities passed in then rounded down(based on game rules)
     def modifier(self, ability):
         return (getattr(self, ability) - 10)//2
 # base function that handles basic attacks. pass in another character in instance to set up fight
@@ -50,7 +54,7 @@ class Character:
 # base function that handles basic damage taken. pass in another character in instance to set up fight
     def take_damage(self, enemy):
         if self.dice_roll == 20:
-            self.attack *= crit_modifier
+            self.attack *= self.crit_modifier
         if self.dice_roll >= self.arclass:
             self.hitpoints -= self.attack
         if self.hitpoints == 0:
@@ -59,7 +63,7 @@ class Character:
 # calculates levels gained based on experience points
     def level_up(self):
         count = 1
-        while (count<20):
+        while (count<21):
             if self.expoints >= int(f"{count}000"):
                 self.level += 1
                 self.hitpoints += self.level_addition
