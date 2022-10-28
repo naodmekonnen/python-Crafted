@@ -36,7 +36,7 @@ Pseudocode: First Iteration
 
 1. BEGIN 
 2. ability modifer
-3. use the getattr() function to calculate the ability scores 
+3. use the getattr() function (and // to return integers)to calculate the ability scores 
 4. END
 
 attack function: 

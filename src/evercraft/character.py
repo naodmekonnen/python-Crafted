@@ -1,4 +1,6 @@
+# import random for later use of alignment selection
 import random
+
 
 class Character:
     level_addition = 5
