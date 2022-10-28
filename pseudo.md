@@ -1,18 +1,166 @@
 Pseudocode: First Iteration
 
-need class named Character
---within class we need several attributes
---main attributes to include
----Name, alignment, armor class, hit points, ability scores
-----ability scores
------Strength, Dexterity, Constituion, Wisdom, Intelligence, Charisma (hardcoded at 10)
----total XP
+## Project Requirements
 
---main methods to include
+- Pseudocode should follow the examples and step through each individual task.
+- Code must be commented well.
+- Tests should be written first, then code written to pass the tests.
 
----ability modifer
----if self.attack < 1 
-        self.attack = 1
+
+## Class
+
+1. BEGIN
+2. Create a character class
+3. within this class create several attributes
+4. the main attributes to include:
+5. Name, alignment, armor class, hit points, ability scores
+6. Strength, Dexterity, Constituion, Wisdom, Intelligence, Charisma will be  hardcoded to 10 to start
+7. create and name character
+    8. make test testing if character class exists
+    9. make character class
+    10. create init function and pass attributes
+    11. make test seeing if Name attribute in character class exists
+    12. make name attribute 
+    13. run test seeing if a name value exists
+    14. make name value
+15. add alignment 
+    16. make test seeing if alignment exists
+    17. make alignment attribute
+    18. make test seeing if alignment has value
+    19. add value to alignment
+    20. make test attempting to pass in alignment
+    21. allow alignment to be passed in
+22. END
+
+## Methods (Functions) included within the character class
+
+1. BEGIN 
+2. ability modifer
+3. use the getattr() function to calculate the ability scores 
+4. END
+
+attack function: 
+
+1. BEGIN
+2. pass in die roll (hardcoded)
+     3. Conditional: if dice roll is 20, mulitply attack score with crit modifier
+     4. Conditional: if the dice roll is equal or greater than enemy armor_class, then a hit occurs
+        5. one point of damage - enemies hp
+        6. character gains 10 XP
+    7. else no hit occurs
+8. END
+
+- damage function
+ 
+1. BEGIN
+2. dice roll (hardcoded) to determine success of attack or defense
+3. use ability modifiers to modify attributes 
+4. Conditional: if attack is successful, then, take a one point hit
+    5. if dice roll is greater reduce a hitpoint
+    6. Conditional: if a roll is 20, damage taken is doubled
+        7. multiply by critical modifier if roll is 20
+    8. Conditional: if hitpoints are down to zero, the character is dead
+        9. set a variable to false if hit points are 0
+10. END
+
+- level up function
+1. BEGIN
+    2. Conditional: if experience points are greater than 1000, increase the level by one
+    3. hit points increase by 5 plus constitution modifier
+4. END
+
+
+## Class
+
+1. BEGIN
+2. Create a Fighter class
+3. within this class create several attributes
+4. make test testing if character class exists
+5. make fighter class
+6. inherit attributes from charcter(parent) class
+7. END
+
+### Methods
+1. BEGIN
+2. use super function to inherit methods from parent class
+3. create an init function within this class
+4. add five to hitpoints(to the base level)
+5. adjusts the level_up function to add 10 hitpoints
+6. add one to dice roll(attack)
+7. add two to armor class 
+8. END
+
+## Class 
+1. BEGIN
+2. Create a Rogue class
+3. within this class create several attributes
+4. make test testing if character class exists
+5. make rogue class
+6. inherit attributes from charcter(parent) class
+7. END
+
+### Methods
+1. BEGIN
+2. use super function to inherit methods from parent class
+3. create an init function within this class
+5. 3 points of damage instead of one for a successful attack
+6. 6 points per level
+7. Conditional: if wisdom modifier is greater than 0, add it to armor class in addition to dexterity
+8. END
+
+## Class 
+1. BEGIN
+2. Create a Paladin class
+3. within this class create several attributes
+4. make test testing if character class exists
+5. make paladin class
+6. inherit attributes from charcter(parent) class
+7. END
+
+### Methods
+1. BEGIN
+2. use super function to inherit methods from parent class
+3. create an init function within this class
+4. Conditional: if enemy alignment is evil,
+        - if diceroll + modifier is greater or equal to 20(critical hit), add 2 to attack, then double
+        - if diceroll + modifier is greater or equal to enemy armor class
+
+     
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if self.attack < 1 
+     self.attack = 1
 ---else      
 ----if self.strength == 1
 -----dice_roll -=5
@@ -73,43 +221,4 @@ need class named Character
 ----elif self.dexterity ==20
 -----self.arclass += 5
 
-
-
-
-
-
-
-
----Character can attack(attack method)
-----pass in die roll (hardcoded)
-----if the roll is >= the enemies AC then successfull hit occurs
------one point of damage - enemies hp
------character gains 10 XP
-----else no hit occurs
-
----Character can take damage
-----if the roll >= characters AC then character takes 1 point of damage 
-----if characters hit points is == 0, character is dead
----dice roll (hardcoded) to determine success of attack or defense
----Ability Modifiers to modify attributes 
-
-
-
-create and name character
-    make test testing if character class exists
-    make character class
-    make test seeing if Name attribute in character class exists
-    make name attribute 
-    run test seeing if a name value exists
-    make name value
-
-add alignment 
-    make test seeing if alignment exists
-    make alignment attribute
-    make test seeing if alignment has value
-    add value to alignment
-    make test attempting to pass in alignment
-    allow alignment to be passed in
-
-    
 
